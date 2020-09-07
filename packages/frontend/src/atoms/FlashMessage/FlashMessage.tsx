@@ -34,7 +34,7 @@ const Container = styled.div`
 
 const eventEmitter = new EventEmitter();
 
-export const FlashMessage = () => {
+export const FlashMessage: React.FunctionComponent = () => {
   const [visibility, setVisibility] = useState(false);
   const [text, setText] = useState('');
   const [type, setType] = useState();

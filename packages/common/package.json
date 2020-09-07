@@ -2,10 +2,12 @@
   "name": "@todo-app/common",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf build && tsc",
+    "lint": "eslint --fix --ext .ts,.tsx .",
+    "format": "prettier --write '*/**/*.{ts,js,css,md,json}'"
   },
   "dependencies": {
     "class-validator": "^0.12.0",

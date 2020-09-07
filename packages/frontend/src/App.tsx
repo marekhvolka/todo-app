@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   padding-bottom: 70px;
 `;
 
-export const App = () => (
+export const App: React.FunctionComponent = () => (
   <ThemeProvider theme={theme}>
     <Provider store={store}>
       <GlobalStyle/>

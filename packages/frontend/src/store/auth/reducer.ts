@@ -13,19 +13,19 @@ export const defaultState: AuthState = {
 
 export const authReducer = (state: AuthState = defaultState, action: AuthAction): AuthState => {
   switch (action.type) {
-    case AuthActionTypes.LOAD_USER: {
-      return {
-        ...state,
-        userData: action.payload,
-      };
-    }
+  case AuthActionTypes.LOAD_USER: {
+    return {
+      ...state,
+      userData: action.payload,
+    };
+  }
 
-    case AuthActionTypes.LOGOUT: {
-      return {
-        ...state,
-        userData: undefined,
-      };
-    }
+  case AuthActionTypes.LOGOUT: {
+    return {
+      ...state,
+      userData: undefined,
+    };
+  }
   }
 
   return state;

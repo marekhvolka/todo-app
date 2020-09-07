@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import * as yup from 'yup';
 import { Input } from '../../atoms/Input/Input';
-import { User } from '@todo-app/common';
 import { Spinner } from '../../atoms/Spinner/Spinner';
 import { media } from '../../theme';
 import { Button } from '../../atoms/Button/Button';
@@ -32,12 +31,12 @@ const validationSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-export const ProfileEdit = () => {
+export const ProfileEdit: React.FunctionComponent = () => {
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
 
-  const onSubmit = (values: User) => {
+  const onSubmit = () => {
     setIsLoading(true);
     alert('Work in progress');
     setIsLoading(false);

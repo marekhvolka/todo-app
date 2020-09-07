@@ -6,7 +6,7 @@ import { LogoutUserAction } from '../../store/auth/actions';
 import { ApplicationState } from '../../store/store';
 import { logout } from '../../services/auth-service';
 
-export const NavbarUserSection = () => {
+export const NavbarUserSection: React.FunctionComponent = () => {
   const history = useHistory();
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
   const dispatch = useDispatch();

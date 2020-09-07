@@ -7,7 +7,7 @@ import { AddTaskAction, FetchTasksAction, RemoveTaskAction, UpdateTaskAction } f
 import { TaskForm } from './TaskForm';
 import { ApplicationState } from '../../store/store';
 
-export const Dashboard = () => {
+export const Dashboard: React.FunctionComponent = () => {
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
   const tasks = useSelector((state: ApplicationState) => state.task.tasks);
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ export const Dashboard = () => {
       <h1>
         Welcome back {userData.email}!
       </h1>
-      <p>This is the dashboard and it's only for logged-in users. You can access all your tasks and manage them</p>
+      <p>This is the dashboard and it&apos;s only for logged-in users. You can access all your tasks and manage them</p>
 
       <TaskForm onSubmit={addTask} userData={userData}/>
       <div>

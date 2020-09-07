@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ApplicationState } from '../../store/store';
 
-export const Home = () => {
+export const Home: React.FunctionComponent = () => {
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
 
   return (

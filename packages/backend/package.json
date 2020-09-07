@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node-dev --respawn ./src/index.ts",
     "build": "rm -rf dist && tsc",
+    "lint": "eslint --fix --ext .ts,.tsx .",
     "format": "prettier --write '*/**/*.{ts,js,css,md,json}'"
   },
   "author": "",

@@ -56,7 +56,7 @@ const validate = (values: RegisterModel) => {
   return errors;
 };
 
-export const Register = () => {
+export const Register: React.FunctionComponent = () => {
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -113,7 +113,7 @@ export const Register = () => {
             />
             <Button center htmlType="submit">Register</Button>
             <LoginSection>
-              Already registered? Let's <Link to={'/login'}>Sign In</Link>
+              Already registered? Let&apos;s <Link to={'/login'}>Sign In</Link>
             </LoginSection>
           </Form>
         )}

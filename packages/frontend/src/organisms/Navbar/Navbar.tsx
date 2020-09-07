@@ -32,7 +32,7 @@ const RightSection = styled.div`
   float: right;
 `;
 
-export const Navbar = () => {
+export const Navbar: React.FunctionComponent = () => {
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
 
   return (

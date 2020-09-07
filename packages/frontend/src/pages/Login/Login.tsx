@@ -27,7 +27,7 @@ const RegisterSection = styled.div`
   margin-top: 20px;
 `;
 
-export const Login = () => {
+export const Login: React.FunctionComponent = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +36,7 @@ export const Login = () => {
     setIsLoading(true);
 
     try {
-      const data = await login(values);
+      const {data} = await login(values);
       setIsLoading(false);
 
       if (data.error) {
@@ -71,7 +71,7 @@ export const Login = () => {
               Log in
             </Button>
             <RegisterSection>
-              Don't have an account? <Link to="/register">Create an account</Link>
+              Don&apos;t have an account? <Link to="/register">Create an account</Link>
             </RegisterSection>
           </LoginWrapper>
         </Form>

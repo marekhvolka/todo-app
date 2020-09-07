@@ -13,7 +13,7 @@ const Table = styled.table`
   }
 `;
 
-export const Profile = () => {
+export const Profile: React.FunctionComponent = () => {
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
 
   if (!userData) {
@@ -26,10 +26,10 @@ export const Profile = () => {
 
       <Table>
         <tbody>
-        <tr key="email">
-          <td>Email:</td>
-          <td>{userData.email}</td>
-        </tr>
+          <tr key="email">
+            <td>Email:</td>
+            <td>{userData.email}</td>
+          </tr>
         </tbody>
       </Table>
 

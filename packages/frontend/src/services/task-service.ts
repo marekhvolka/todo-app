@@ -1,9 +1,9 @@
 import { config } from '../config';
 import { authHeader } from './auth-header';
-import axios from 'axios';
-import { Task } from '@todo-app/common';
+import axios, { AxiosResponse } from 'axios';
+import { AddTaskResponse, AllTasksResponse, RemoveTaskResponse, Task, UpdateTaskResponse } from '@todo-app/common';
 
-export const fetchTasks = (userId: string) => {
+export const fetchTasks = (userId: string): Promise<AxiosResponse<AllTasksResponse>> | undefined => {
   try {
     return axios.post(config.backendUrl + '/all-tasks', {userId}, {headers: authHeader()});
   } catch (error) {
@@ -11,7 +11,7 @@ export const fetchTasks = (userId: string) => {
   }
 };
 
-export const addTask = (task: Task) => {
+export const addTask = (task: Task): Promise<AxiosResponse<AddTaskResponse>> | undefined => {
   try {
     return axios.post(config.backendUrl + '/add-task', {task}, {headers: authHeader()});
   } catch (error) {
@@ -19,7 +19,7 @@ export const addTask = (task: Task) => {
   }
 };
 
-export const updateTask = (task: Task) => {
+export const updateTask = (task: Task): Promise<AxiosResponse<UpdateTaskResponse>> | undefined => {
   try {
     return axios.post(config.backendUrl + '/update-task', {task}, {headers: authHeader()});
   } catch (error) {
@@ -27,7 +27,7 @@ export const updateTask = (task: Task) => {
   }
 };
 
-export const removeTask = (taskId: string) => {
+export const removeTask = (taskId: string): Promise<AxiosResponse<RemoveTaskResponse>> | undefined => {
   try {
     return axios.post(config.backendUrl + '/remove-task', taskId, {headers: authHeader()});
   } catch (error) {

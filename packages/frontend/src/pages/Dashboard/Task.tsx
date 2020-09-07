@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Task } from '@todo-app/common';
 import { Button } from '../../atoms/Button/Button';
+import { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { Checkbox, Input } from 'antd';
 import FaPencil from 'react-icons/lib/fa/pencil';
 import FaTrash from 'react-icons/lib/fa/trash';
@@ -57,7 +58,7 @@ type Props = {
   onUpdate: (taskData: Task) => void
 }
 
-export const TaskComponent = ({onRemove, task, onUpdate}: Props) => {
+export const TaskComponent: React.FunctionComponent<Props> = ({onRemove, task, onUpdate}: Props) => {
   const [isEditable, setIsEditable] = useState(false);
   const [taskData, setTaskData] = useState(task);
 
@@ -70,14 +71,14 @@ export const TaskComponent = ({onRemove, task, onUpdate}: Props) => {
     setIsEditable(false);
   };
 
-  const onTextChanged = (event: any) => {
+  const onTextChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTaskData({
       ...taskData,
       text: event.target.value
     });
   };
 
-  const onIsCompleteChanged = (event: any) => {
+  const onIsCompleteChanged = (event: CheckboxChangeEvent) => {
     onUpdate({
       ...task,
       isComplete: event.target.checked

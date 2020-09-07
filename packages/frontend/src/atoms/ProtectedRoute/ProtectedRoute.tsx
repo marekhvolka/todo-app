@@ -10,7 +10,7 @@ type Props = {
   exact?: any;
 };
 
-export const ProtectedRoute = ({component: Component, ...rest}: Props) => {
+export const ProtectedRoute: React.FunctionComponent<Props> = ({component: Component, ...rest}: Props) => {
   const userData = useSelector((state: ApplicationState) => state.auth.userData);
 
   return <Route {...rest} render={(props) => (userData ? <Component {...props} /> : <Redirect to="/login"/>)}/>;

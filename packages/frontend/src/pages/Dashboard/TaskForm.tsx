@@ -23,7 +23,7 @@ const TextInput = styled(Input)`
 const SaveButton = styled(Button)`
 `;
 
-export const TaskForm = ({onSubmit, userData}: Props) => {
+export const TaskForm: React.FunctionComponent<Props> = ({onSubmit, userData}: Props) => {
   const [text, setText] = useState('');
 
   const handleSubmit = () => {

@@ -15,10 +15,10 @@ type Props = FieldProps & {
 
 export const Select = React.memo(
   ({
-     field, form: {
+    field, form: {
       setFieldValue, setFieldTouched, touched, errors,
     }, ...props
-   }: Props) => (
+  }: Props) => (
     <Form.Item label={props.label}>
       <BaseSelect
         style={{minWidth: '120px'}}
